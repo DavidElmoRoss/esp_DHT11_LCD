@@ -63,10 +63,14 @@ void loop()
   printf("\e[13;25H");                // Put cursor at (13,32)                                           
   printf("%4.1f\t%4.1f\t%4.1f",       // print humidity temp(C) temp(F)) to 1 dec place 
             humid,temp,fahr);
-   sprintf(buff,"%3.1f  %3.1f %3.1f", // sprintf formats data into string array buff
-               humid,temp,fahr);
-   lcd.setCursor(1,1);                // set lcd cursor to col 1, row a
+                                      // sprintf formats data into string array buff
+                                      // 0xdf is the degree symbol for LCD
+   sprintf(buff,"%3.1f%c %3.0f%c%c%3.0f%c%c", 
+               humid,'%',temp,0xdf,
+               'C',fahr,0xdf,'F');
+   lcd.setCursor(0,1);                // set lcd cursor to col 1, row a
    lcd.print(buff);                   // print humid,temp,fahr on lcd
+   lcd.setCursor(10,1);
    delay(2000);                       // wait 2 seconds between each reading
   }
 }
