@@ -58,7 +58,7 @@ void loop()
                                       // to the nearest % for humidity and
                                       // to the nearest degree for temp
   humid=(float)DHT11.humidity;        // humid gets float of humidity value
-  temp=(float)DHT11.temperature;      // temp gets float of %C temperature
+  temp=(float)DHT11.temperature;      // temp gets float of deg C temperature
   fahr=(9.0/5.0)*(temp)+32.0;         // fahr is calculated from temp
   printf("\e[13;25H");                // Put cursor at (13,32)                                           
   printf("%4.1f\t%4.1f\t%4.1f",       // print humidity temp(C) temp(F)) to 1 dec place 
