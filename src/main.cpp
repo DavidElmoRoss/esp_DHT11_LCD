@@ -34,7 +34,7 @@ void  setup()
   lcd.display();                     // turn on LCD display
   lcd.setCursor(0,0);                // lcd cursor to col 0 row 0 
   lcd.setRGB(0,0x80,0x80);           // set LCD screen to TEAL
-  lcd.print("humid% TmpC TmpF");     // print Title
+  lcd.print("Humid% TmpC TmpF");     // print Title
 }
 
 void loop()
